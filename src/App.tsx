@@ -253,11 +253,11 @@ function App(props: any) {
                                    onChange={setSelectedChain}
                                    selected={selectedChain} />
                 : <CircularProgress />}
-                <Tooltip title={t("Add custom chain") as string}>
+                {/* <Tooltip title={t("Add custom chain") as string}>
                   <IconButton onClick={openAddChainModal}>
                     <PlaylistAddIcon />
                   </IconButton>
-                </Tooltip>
+                </Tooltip> */}
                 <LanguageMenu />
                 <Tooltip title={t("JSON-RPC API Documentation") as string}>
                   <IconButton
