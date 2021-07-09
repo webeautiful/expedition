@@ -12,9 +12,7 @@ import NodeView from "./containers/NodeView";
 import Transaction from "./containers/Transaction";
 import { darkTheme, lightTheme } from "./themes/jadeTheme";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
-import NotesIcon from "@material-ui/icons/Notes";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
-import CodeIcon from "@material-ui/icons/Code";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import useInterval from "use-interval";
 import ETHJSONSpec from "@etclabscore/ethereum-json-rpc-specification/openrpc.json";
@@ -96,10 +94,10 @@ function App(props: any) {
     const { name } = selectedChain as Chain;
 
     if (name !== query.network) {
-      setQuery({ network: name });
+      // setQuery({ network: name });
       history.push({
         pathname: history.location.pathname,
-        search: `?network=${name}`,
+        // search: `?network=${name}`,
       });
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -204,17 +202,17 @@ function App(props: any) {
                     </RouterLink>
                   )}>
                   <Grid container>
-                    <Grid>
+                    {/* <Grid>
                       <img
                         alt="expedition-logo"
                         height="30"
                         style={{ marginRight: "10px" }}
                         src={expeditionLogo}
                       />
-                    </Grid>
+                    </Grid> */}
                     <Grid>
                       <Typography color="textSecondary" variant="h6">
-                        {t("Expedition")}
+                        {t("Explorer")}
                       </Typography>
                     </Grid>
                   </Grid>
@@ -248,33 +246,17 @@ function App(props: any) {
                 />
               </Grid>
               <Grid item>
-                {selectedChain ? <ChainDropdown
+                {/* {selectedChain ? <ChainDropdown
                                    chains={chains}
                                    onChange={setSelectedChain}
                                    selected={selectedChain} />
-                : <CircularProgress />}
+                : <CircularProgress />} */}
                 {/* <Tooltip title={t("Add custom chain") as string}>
                   <IconButton onClick={openAddChainModal}>
                     <PlaylistAddIcon />
                   </IconButton>
                 </Tooltip> */}
                 <LanguageMenu />
-                <Tooltip title={t("JSON-RPC API Documentation") as string}>
-                  <IconButton
-                    onClick={() =>
-                      window.open("https://playground.open-rpc.org/?schemaUrl=https://raw.githubusercontent.com/etclabscore/ethereum-json-rpc-specification/master/openrpc.json") //tslint:disable-line
-                    }>
-                    <NotesIcon />
-                  </IconButton>
-                </Tooltip>
-                <Tooltip title={t("Expedition Github") as string}>
-                  <IconButton
-                    onClick={() =>
-                      window.open("https://github.com/xops/expedition")
-                    }>
-                    <CodeIcon />
-                  </IconButton>
-                </Tooltip>
                 <Tooltip title={t("Toggle Dark Mode") as string}>
                   <IconButton onClick={darkMode.toggle}>
                     {darkMode.value ? <Brightness3Icon /> : <WbSunnyIcon />}

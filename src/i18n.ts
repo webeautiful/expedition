@@ -24,6 +24,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    lng: 'cn',
     resources: {
       en: { translation: enJSON },
       kr: { translation: krJSON },

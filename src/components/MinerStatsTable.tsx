@@ -46,7 +46,7 @@ const MinerStatsTable: React.FC<IProps> = ({ blocks }) => {
         <TableRow>
           <TableCell>Blocks Mined</TableCell>
           <TableCell>Address</TableCell>
-          <TableCell>ExtraData</TableCell>
+          {/* <TableCell>ExtraData</TableCell> */}
           <TableCell>Blocks</TableCell>
         </TableRow>
       </TableHead>
@@ -62,7 +62,7 @@ const MinerStatsTable: React.FC<IProps> = ({ blocks }) => {
                 <TableBody>
                   {_.map(groupedMiners[minerData.address], (bs: any[], key: string) => (
                     <TableRow>
-                      <TableCell>{key}</TableCell>
+                      {/* <TableCell>{key}</TableCell> */}
                       <TableCell colSpan={1}>
                         {bs.map((block) => {
                           const percentFull = (hexToNumber(block.gasUsed) / hexToNumber(block.gasLimit)) * 100;
